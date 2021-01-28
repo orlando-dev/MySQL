@@ -9,6 +9,8 @@ create table if not exists prefeitos
     cidade_id int unsigned unique key,
     foreign key (cidade_id) references cidades(id)
 );
-
+-- modificando a tabela prefeitos dizendo que não aceita nulo
+alter table prefeitos
+modify column nome varchar(30) not null;
 -- apesar de ser 1 pra 1 sempre se pergunte se realmente vale a pena deixa dados separados em  um outra tabela
 -- geralmente colocamos 1 pra 1 na mesma tabela. E 1 pra N a chave primaria de 1 vai pra N como foreign key referenciada.
